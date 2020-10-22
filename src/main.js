@@ -5,6 +5,9 @@ import router from './routes'
 
 Vue.config.productionTip = false
 
+if(store.state.user.token) store.dispatch('login', store.state.user.token)
+else store.dispatch('setUserStatus', false)
+
 new Vue({
   store,
   router,
